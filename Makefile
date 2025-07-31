@@ -291,4 +291,3 @@ windowszip : $(EXECUTABLES)
 
 
 .SUFFIXES : .cpp .c .o .X.o $(SUFFIXES)
-

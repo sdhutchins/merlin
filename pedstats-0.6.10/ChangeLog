@@ -1,0 +1,186 @@
+ChangeLog
+
+========================================================================================
+CHANGES AFTER PUBLIC RELEASE OF PEDSTATS
+========================================================================================
+
+PEDSTATS 0.6.10
+===============
+
+   * Noted that ChangeLog hand't been updated for a while...
+
+   * Updated pedigree library to incorporate changes from recent versions of Merlin,
+     including support for base-pair allele labels and .gzipped input files. 
+
+PEDSTATS 0.6.3
+==============
+
+   * Unrelated sample Hardy-Weinberg test added (--checkUnrelated). When this option is 
+     selected, Pedstats will select a reasonable sample of unrelated individuals from each family 
+     to be used for all Hardy-Weinberg tests. Sampled individuals are reported to a log file. 
+
+   * Data quality statistics. When more than 50 markers are present, Pedstats now
+     prints a table summarizing marker quality and sends detailed marker information to 
+     a separate file.
+
+   * PDF output. When more than 50 markers are present, Pedstats will only produce 
+     PDF summaries of each marker if they are specifically requested (--markerPDF)
+
+   * Option to select significance cutoff for printing of Hardy-Weinberg test results added (--cutoff).
+
+
+PEDSTATS 0.5.9
+==============
+
+   * Corrected bug that caused non-specific Mendelian inheritance errors to be erroneously reported for 
+     some large family structures.
+
+PEDSTATS 0.5.8
+==============
+
+   * Mendelian inheritance checks expanded to include a genotype elimination algorithm
+     capable of identifying all errors within families without loops. Inheritance 
+     checks now incorporate a first-pass nuclear family check followed by 
+     a more thorough genotype elimination check if no errors are identified by the 
+     nuclear family algorithm. 
+
+   * Verbose output option added (--verbose). When this option is selected, 
+     additional information on individuals comprising disconnected family groups 
+     will be reported.
+
+   * Option to output marker summary information to a separate text file added (--markerTables).
+
+   * Filter log added. When filtering is done, persons excluded from summaries are
+     reported in a text file.
+
+   * Age checks now screen for large differences in sibling age or birth year values. 
+
+   * Basic age checking algorithm updated to provide clearer error messaging and to 
+     correct bug where missing data in leaf individuals occasionally caused an error 
+     to be reported for parent/grandparent age values when no error existed.
+
+   * Major revisions to make main code routines more modular.
+
+   * Major revisions to charting classes to accomodate additional functionality. 
+
+   * Capability to zero out founder parents after trimming added.
+
+   * Multiple minor updates to improve readability of graphical and text output.  
+ 
+
+PEDSTATS 0.5.4
+==============
+
+   * Fixed inverted labels for expected and observed number of heterozygotes in exact Hardy-Weinberg
+     test output
+
+   * Changes to String::printf() function to accomodate different structure for variable argument lists
+     (valist) on amd64 and ppc.	
+
+PEDSTATS 0.5.3
+===============
+
+   * Fast exact Hardy-Weinberg test added. When this option is requested,
+     all tests for markers with two alleles and less than 5000 genotypes will be 
+     computed using a fast exact calculation.
+
+   * Graphical output for fast exact Hardy-Weinberg test added.
+
+   * Updates to Hardy-Weinberg pooling algorithm to handle end case 
+     where all alleles are classified as rare, provide better error messages 
+     for other end cases. 
+
+   * Code updates to eliminate compiler warnings generated for Unix CC
+
+   * Age checking algorithm rewritten to improve performance and error 
+     messaging.
+
+    
+PEDSTATS 0.4.6
+==============
+
+   * Version information added to program banner and Makefile. 
+
+   * Option for sex-specific output added (--bySex). When this option is requested,
+     all text output is broken down by gender. When combined with --pdf and --pairs options,
+     all pairwise charts are broken down by gender.
+
+   * Graphical output for Hardy-Weinberg tests added.
+
+   * Option to print all results for Hardy-Weinberg tests added (--showAll)
+
+   * Options to test age covariates for appropriate generation gaps added (--ageLabel
+     --birthYear, --minGap, and --maxGap). 
+
+   * Data structures for relative pair output rewritten to improve code performance
+     on large data sets
+
+   * Covariate and trait text output reorganized to include additional statistics
+
+   * Family-based output added (--byFamily) When this option is requested, per-family
+     summaries of traits, covariates, affection variables and marker genotypes are
+     output to separate data files
+
+   * Expanded text output for pairwise affection variables to include counts of
+     discordant and unaffected relative pairs.
+
+   * Added separate section for IBD statistics. When an ibd file is supplied (using
+     the -i command line option), counts of families by generation structures
+     that have ibd information provided in the ibd file are reported for each marker
+     locus.
+
+   * Pedigree filtering added. Filtering options (--minPhenos, --minGenos, --minCovariates, 
+     and --affectedFor) can be used to remove from all summaries any individuals not 
+     meeting filtering criteria.  
+
+   * New options for pdf output added (--markerPDF, --traitPDF, --affPDF) to allow better 
+     control over types of information written to pdf files.
+ 	
+PEDSTATS 0.3.2
+==============
+   * pairs graphical output follows individual trait, affection and covariate variables 
+     instead of being placed at end of the pdf file
+
+   * Corrected bug that miscounted avuncular pairs in text output for some input files.
+
+PEDSTATS 0.3.1
+==============
+
+   * Fixed bug where half-sibs were included in cousins count for --pairStatistics 
+     graphical output.
+
+PEDSTATS 0.3.0
+===============
+
+   * PDF output added for --pairStatistics option. When pair information
+     is requested, pedstats generates a page of scatter plots for each 
+     covariate and quantitative trait variable. One plot is generated for 
+     each of 6 relative pair types (cousin, half-sib, sib, avuncular, parent-child
+     and grandparent-grandchild pairs). In addition,  pairwise affection status 
+     is summarized for each relative pair type, using one page of histogram plots per
+     affection status variable.
+
+   * Legends are replaced with labels on the x-axis for charts with categorical variables.
+
+PEDSTATS 0.2.0
+==============
+
+  * Improved PDF Graph Layout. Graphs in PedStats now provide better handling
+    of missing data. 
+
+  * R^2 in the sib-sib trait and covariate plots has been
+    replaced by the correlation coefficient r, which is expected to be half
+    of the heritability for a simple genetic trait.
+
+  * Fixed mislabelling of males and females in breakdown of phenotype scores by sex.
+
+
+PEDSTATS 0.1.0
+==============
+
+February 21st, 2003 -- Version 0.1.0 Officially Released
+
+=============================================================
+OLDER VERSIONS OF PEDSTATS AVAILABLE WITH MERLIN & QTDT
+=============================================================
+
