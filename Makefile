@@ -180,7 +180,7 @@ $(MERLINXOFF) :  $(LIBFILE) $(PDFLIB) $(OFFXOBJ) $(CLUSTEROBJ)
 
 $(PEDSTATS) : pedstats-$(PSVERSION)-fixed.tar.gz
 	gunzip -c pedstats-$(PSVERSION)-fixed.tar.gz | tar -xf - 
-	cd pedstats-$(PSVERSION) ; $(MAKE) executables/pedstats
+	cd pedstats-$(PSVERSION) ; $(MAKE) clean ; $(MAKE) executables/pedstats
 	cp pedstats-$(PSVERSION)/executables/pedstats executables
 	rm -rf pedstats-$(PSVERSION)
 
