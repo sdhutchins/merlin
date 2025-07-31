@@ -126,37 +126,31 @@ merlin -d data.dat -p pedigree.ped --all --zero --founders
 
 ### Minimal Pedstats Example
 
-The `pedstats` component provides pedigree statistics and visualization. Here's a minimal example using the provided HapMap data:
+The `pedstats` component provides pedigree statistics and visualization:
 
 ```bash
-# Generate basic pedigree statistics
-./executables/pedstats -d examples/HapMap.genotypes -p examples/HapMap.template
+# Basic pedigree statistics
+./executables/pedstats -d examples/basic2.dat -p examples/basic2.ped
 
-# Generate frequency analysis
-./executables/pedstats -d examples/HapMap.genotypes -p examples/HapMap.template --freq
+# Hardy-Weinberg testing
+./executables/pedstats -d examples/basic2.dat -p examples/basic2.ped --hardyWeinberg
 
-# Generate association analysis
-./executables/pedstats -d examples/HapMap.genotypes -p examples/HapMap.template --assoc examples/assoc.tbl
+# Generate PDF output
+./executables/pedstats -d examples/basic2.dat -p examples/basic2.ped --pdf
 ```
-
-### Example Files Description
-
-- **`HapMap.genotypes`**: Genotype data in HapMap format with SNP information
-- **`HapMap.template`**: Pedigree template file defining family structures
-- **`assoc.tbl`**: Association analysis table for phenotype correlations
-- **`basic2.freq`**: Frequency file for basic allele frequency analysis
-- **`parametric.freq`**: Frequency file for parametric analysis
-- **`parametric.model`**: Disease model specification for parametric analysis
 
 ### Advanced Examples
 
 ```bash
+# Large dataset analysis
+./executables/pedstats -d examples/assoc.dat -p examples/assoc.ped --verbose
+
 # Cluster-based SNP analysis
-merlin -d examples/HapMap.genotypes -p examples/HapMap.template \
+merlin -d examples/snp-scan.dat -p examples/snp-scan.ped -m examples/snp-scan.map \
        --clusters examples/snp-scan.clusters
 
 # Parametric linkage analysis
-merlin -d examples/HapMap.genotypes -p examples/HapMap.template \
+merlin -d examples/parametric.dat -p examples/parametric.ped -m examples/parametric.map \
        --model examples/parametric.model --freq examples/parametric.freq
 ```
 
@@ -234,7 +228,7 @@ We welcome contributions! Please:
   - Email: goncalo@umich.edu
   - Institution: University of Michigan
 
-## Reference
+## Citation
 
 **GR Abecasis, SS Cherny, WOC Cookson and LR Cardon (2002)**
 MERLIN - Rapid analysis of dense genetic maps using sparse gene flow trees.

@@ -62,6 +62,13 @@ pedstats-*.tar.gz
 *.err
 *.tmp
 
+# MERLIN and PEDSTATS output files
+*.ibd
+*.kin
+*.info
+*.pdf
+*.hweselection
+
 # Documentation build
 docs/_build/
 docs/build/
