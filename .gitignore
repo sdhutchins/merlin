@@ -1,0 +1,83 @@
+# Build artifacts
+*.o
+*.a
+*.so
+*.dylib
+*.exe
+*.dll
+
+# Object files and libraries
+libsrc/*.o
+libsrc/*.a
+pdf/*.o
+pdf/*.a
+merlin/*.o
+regress/*.o
+clusters/*.o
+offline/*.o
+
+# Executables
+executables/
+bin/
+
+# Temporary build directories
+pedstats-*/
+build/
+dist/
+obj/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log
+logs/
+
+# Data files (if any)
+*.dat
+*.ped
+*.ibd
+*.map
+*.fam
+*.bim
+*.bed
+
+# Archive files (keep the fixed one, ignore others)
+pedstats-*.tar.gz
+!pedstats-0.6.10-fixed.tar.gz
+
+# Backup files
+*.bak
+*.backup
+*.orig
+
+# Test output files
+*.out
+*.err
+*.tmp
+
+# Documentation build
+docs/_build/
+docs/build/
+
+# Python cache (if any Python scripts)
+__pycache__/
+*.pyc
+*.pyo
+
+# CMake files (if using CMake)
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile.cmake
+
+# Package files
+*.deb
+*.rpm
+*.pkg 
